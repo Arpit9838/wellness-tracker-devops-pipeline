@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wellness-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wellness
+  template:
+    metadata:
+      labels:
+        app: wellness
+    spec:
+      containers:
+        - name: wellness
+          image:  arpit9838/wellness-tracker:latest
+          ports:
+            - containerPort: 3000
