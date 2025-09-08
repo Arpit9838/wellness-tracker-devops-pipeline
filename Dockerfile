@@ -1,4 +1,3 @@
-
 FROM node:18
 
 WORKDIR /app
@@ -13,4 +12,6 @@ RUN npm run build
 
 EXPOSE 3000
 
-CMD ["npm", "run", "preview"]
+CMD ["npm", "run", "preview", "--", "--port", "3000", "--host"]
+
+
